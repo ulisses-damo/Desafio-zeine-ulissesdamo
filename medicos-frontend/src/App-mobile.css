@@ -1,0 +1,547 @@
+/* Reset e base - App Mobile CSS ATIVO */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif !important;
+  background: #f8f9ff !important;
+  color: #333 !important;
+  line-height: 1.4;
+}
+
+.app {
+  min-height: 100vh;
+  max-width: 425px;
+  margin: 0 auto;
+  background: white;
+}
+
+/* Header Mobile - CONVERTIDO PARA TAILWIND */
+.header {
+  background: linear-gradient(135deg, #4A90E2 0%, #5BA0F2 100%);
+  padding: 40px 20px 30px 20px;
+  color: white;
+  position: relative;
+} 
+
+ .greeting {
+  margin-bottom: 10px;
+  font-size: 16px;
+  opacity: 0.9;
+}
+
+ .main-title {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+/* Barra de Pesquisa */
+.search-container {
+  padding: 0 20px 20px 20px;
+  background: linear-gradient(135deg, #4A90E2 0%, #5BA0F2 100%);
+}
+
+.search-box {
+  position: relative;
+}
+
+.search-input {
+  width: 100%;
+  padding: 15px 50px 15px 45px;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  background: white;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.search-input::placeholder {
+  color: #999;
+}
+
+.search-icon {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #999;
+  font-size: 18px;
+}
+
+/* Seção de Categorias */
+.categories-section {
+  padding: 25px 20px 20px 20px;
+  background: #f8f9ff;
+}
+
+.categories-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.category-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 10px;
+  border-radius: 56px;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  /* border: 2px solid transparent; */
+  position: relative;
+  width: 58px;
+  height: 58px;
+}
+
+.category-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(74, 144, 226, 0.15);
+}
+
+.category-item.active {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(74, 144, 226, 0.25);
+  border-color: #4A90E2;
+  background: #51A8FF;
+}
+
+
+
+.category-icon {
+  font-size: 24px;
+  transition: transform 0.2s ease;
+  margin-top: 6px;
+}
+
+.category-item.active .category-icon {
+  transform: scale(1.1);
+}
+
+.category-name {
+  font-size: 12px;
+  color: #666;
+  text-align: center;
+  font-weight: 500;
+}
+
+.category-item.active .category-name {
+  color: #4A90E2;
+  font-weight: 600;
+}
+
+/* Lista de Médicos */
+.medicos-section {
+  padding: 0 20px 80px 20px;
+  background: #f8f9ff;
+}
+
+.medicos-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Card do Médico - Layout Horizontal Mobile */
+.medico-card {
+  display: flex;
+  background: white;
+  border-radius: 16px;
+  padding: 20px;
+  min-height: 100px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  transition: all 0.2s ease;
+  cursor: pointer;
+  height: 120px;
+}
+
+.medico-card:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+}
+
+.medico-image {
+  width: 80px;
+  height: 80px;
+  border-radius: 16px;
+  overflow: hidden;
+  margin-right: 18px;
+  flex-shrink: 0;
+}
+
+.medico-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.medico-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.medico-header {
+  margin-bottom: 10px;
+}
+
+.medico-nome {
+  font-size: 17px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 4px;
+}
+
+.medico-especialidades {
+  font-size: 14px;
+  color: #4A90E2;
+  font-weight: 500;
+}
+
+.medico-avaliacao {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding-top: 15px;
+}
+
+.star-icon {
+  color: #FFD700;
+  font-size: 16px;
+}
+
+.rating-number {
+  font-size: 15px;
+  color: #666;
+  font-weight: 500;
+}
+
+/* Estados */
+.loading {
+  text-align: center;
+  padding: 40px 20px;
+  color: #666;
+}
+
+.error-container {
+  text-align: center;
+  padding: 40px 20px;
+  color: #e74c3c;
+}
+
+.no-results {
+  text-align: center;
+  padding: 40px 20px;
+  color: #666;
+}
+
+/* Bottom Navigation */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 425px;
+  background: white;
+  border-top: 1px solid #f0f0f0;
+  display: flex;
+  justify-content: space-around;
+  padding: 12px 0 25px 0;
+  box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #999;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.nav-item.active {
+  color: #4A90E2;
+}
+
+/* Responsividade para telas maiores */
+@media (min-width: 426px) {
+  .app {
+    border: 1px solid #e0e0e0;
+    border-radius: 20px;
+    margin: 20px auto;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+  }
+}
+
+/* Mobile L (376px - 425px) */
+@media (min-width: 376px) and (max-width: 425px) {
+  .header {
+    padding: 35px 18px 28px 18px;
+  }
+  
+  .main-title {
+    font-size: 26px;
+  }
+  
+  .search-container {
+    padding: 0 18px 18px 18px;
+  }
+  
+  .categories-section {
+    padding: 22px 18px 16px 18px;
+  }
+  
+  .medicos-section {
+    padding: 0 18px 80px 18px;
+  }
+  
+  .medico-image {
+    width: 65px;
+    height: 65px;
+  }
+}
+
+/* Mobile M (375px) */
+@media (max-width: 375px) {
+  .app {
+    max-width: 375px;
+  }
+  
+  .header {
+    padding: 30px 16px 25px 16px;
+  }
+  
+  .main-title {
+    font-size: 24px;
+  }
+  
+  .search-container {
+    padding: 0 16px 18px 16px;
+  }
+  
+  .categories-section {
+    padding: 20px 16px 15px 16px;
+  }
+  
+  .categories-grid {
+    gap: 10px;
+    margin-bottom: 18px;
+  }
+  
+  .category-item {
+    padding: 12px 6px;
+  }
+  
+  .category-icon {
+    font-size: 20px;
+  }
+  
+  .medicos-section {
+    padding: 0 16px 80px 16px;
+  }
+  
+  .medico-card {
+    padding: 16px;
+    min-height: 90px;
+  }
+  
+  .medico-image {
+    width: 70px;
+    height: 70px;
+    margin-right: 15px;
+    border-radius: 14px;
+  }
+  
+  .medico-nome {
+    font-size: 15px;
+  }
+  
+  .medico-especialidades {
+    font-size: 12px;
+  }
+  
+  .bottom-nav {
+    max-width: 375px;
+  }
+}
+
+/* Mobile S (320px) */
+@media (max-width: 320px) {
+  .app {
+    max-width: 320px;
+  }
+  
+  .header {
+    padding: 30px 12px 20px 12px;
+  }
+  
+  .main-title {
+    font-size: 24px;
+  }
+  
+  .search-container {
+    padding: 0 12px 16px 12px;
+  }
+  
+  .search-input {
+    padding: 12px 40px 12px 40px;
+    font-size: 15px;
+  }
+  
+  .categories-section {
+    padding: 16px 12px 12px 12px;
+  }
+  
+  .categories-title {
+    font-size: 16px;
+    margin-bottom: 16px;
+  }
+  
+  .categories-grid {
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .category-item {
+    padding: 10px 6px;
+  }
+  
+  .category-icon {
+    font-size: 20px;
+    margin-bottom: 6px;
+  }
+  
+  .category-name {
+    font-size: 11px;
+  }
+  
+  .medicos-section {
+    padding: 0 12px 80px 12px;
+  }
+  
+  .medicos-grid {
+    gap: 10px;
+  }
+  
+  .medico-card {
+    padding: 14px;
+    min-height: 85px;
+    height: 100px;
+  }
+  
+  .medico-image {
+    width: 65px;
+    height: 65px;
+    margin-right: 12px;
+  }
+  
+  .medico-nome {
+    font-size: 14px;
+  }
+  
+  .medico-especialidades {
+    font-size: 11px;
+  }
+  
+  .star-icon,
+  .rating-number {
+    font-size: 13px;
+  }
+  
+  .bottom-nav {
+    max-width: 320px;
+    padding: 10px 0 20px 0;
+  }
+}
+
+/* Landscape Mode para mobiles */
+@media (max-height: 500px) and (orientation: landscape) {
+  .header {
+    padding: 20px 20px 15px 20px;
+  }
+  
+  .main-title {
+    font-size: 22px;
+    margin-bottom: 15px;
+  }
+  
+  .search-container {
+    padding: 0 20px 15px 20px;
+  }
+  
+  .categories-section {
+    padding: 15px 20px 10px 20px;
+  }
+  
+  .categories-title {
+    margin-bottom: 15px;
+  }
+  
+  .bottom-nav {
+    display: none; /* Esconder navegação em landscape */
+  }
+}
+
+/* Toast Customization */
+.Toastify__toast {
+  border-radius: 12px;
+  font-family: inherit;
+  font-size: 14px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.Toastify__toast--success {
+  background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+  color: white;
+}
+
+.Toastify__toast-body {
+  padding: 8px;
+  line-height: 1.4;
+}
+
+.Toastify__close-button {
+  color: white;
+  opacity: 0.8;
+}
+
+.Toastify__close-button:hover {
+  opacity: 1;
+}
+
+.Toastify__progress-bar--success {
+  background: rgba(255, 255, 255, 0.7);
+}
+
+/* Mobile toast adjustments */
+@media (max-width: 480px) {
+  .Toastify__toast {
+    margin: 8px;
+    font-size: 13px;
+    border-radius: 10px;
+  }
+  
+  .Toastify__toast-container {
+    width: calc(100% - 16px);
+    left: 8px;
+    transform: none;
+  }
+}
