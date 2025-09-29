@@ -1,5 +1,22 @@
+CREATE DATABASE IF NOT EXISTS sistema_medicos;
 
-ALTER SEQUENCE medicos_id_seq RESTART WITH 1;
+
+-- Criar a tabela medicos (caso não exista)
+CREATE TABLE IF NOT EXISTS medicos (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nome VARCHAR(255) NOT NULL,
+    descricao TEXT,
+    imagem VARCHAR(500),
+    avaliacao DECIMAL(2,1) DEFAULT 0.0,
+    especialidades VARCHAR(255) NOT NULL,
+    horarios TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+);
+
+-- Resetar o auto_increment da sequência
+ALTER TABLE medicos AUTO_INCREMENT = 1;
+
+
 
 -- Inserir médicos homens (DR.)
 INSERT INTO medicos (nome, descricao, imagem, avaliacao, especialidades, horarios) VALUES
@@ -70,4 +87,8 @@ INSERT INTO medicos (nome, descricao, imagem, avaliacao, especialidades, horario
     'Ortopedia',
     '07:00 AM, 12:30 PM, 06:30 PM'
 );
+
+-- Verificar se os dados foram inseridos corretamente
+SELECT COUNT(*) as total_medicos FROM medicos;
+SELECT DISTINCT especialidades FROM medicos;
 
